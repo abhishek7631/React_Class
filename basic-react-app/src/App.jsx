@@ -1,17 +1,14 @@
 import "./App.css";
-
-function Description() {
-  return <h3>i am a description</h3>;
-}
+import Title from "./Title.jsx";
+import Product from "./product.jsx";
 
 function App() {
   return (
-    <div>
-      <Title></Title>
-      <Description></Description>
-      <Title></Title>
-      <Description></Description>
-    </div>
+    <>
+      <Product></Product>
+      <Product></Product>
+      <Product></Product>
+    </>
   );
 }
 
