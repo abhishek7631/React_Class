@@ -1,15 +1,9 @@
 import "./App.css";
 import Title from "./Title.jsx";
-import Product from "./product.jsx";
+import ProductTab from "./productTab.jsx";
 
 function App() {
-  return (
-    <>
-      <Product></Product>
-      <Product></Product>
-      <Product></Product>
-    </>
-  );
+  return <ProductTab></ProductTab>;
 }
 
 export default App;
