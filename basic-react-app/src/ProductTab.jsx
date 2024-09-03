@@ -3,10 +3,10 @@ import Product from "./product";
 function ProductTab() {
   return (
     <>
-      <Product></Product>
-      <Product></Product>
-      <Product></Product>
-      <Product></Product>
+      <Product title="Logitech MX Master"></Product>
+      <Product title="Apple Pencil (2nd Gen)"></Product>
+      <Product title="Zebronics Zeb-transformer"></Product>
+      <Product title="Petronics Toad 23"></Product>
     </>
   );
 }
