@@ -8,12 +8,13 @@ function Product({ title, idx }) {
     ["8,000 DPI", "5 Programmable buttons"],
     ["intuitive surface", "designed for iPad pro"],
     ["designed for iPad pro", "intuitive surface"],
-    ["wireless"],
+    ["wireless", "optical orientation"],
   ];
   return (
     <div className="Product">
       <h4>{title}</h4>
-      <p>{description[idx]}</p>
+      <p>{description[idx][0]}</p>
+      <p>{description[idx][1]}</p>
       <Price oldPrice={oldPrice[idx]} newPrice={newPrice[idx]}></Price>
     </div>
   );
