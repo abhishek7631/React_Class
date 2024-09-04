@@ -5,10 +5,10 @@ function Product({ title, idx }) {
   let oldPrice = ["12,495", "11,900", "1,599", "599"];
   let newPrice = ["8,999", "9,199", "899", "278"];
   let description = [
-    "8,000 DPI",
-    "intuitive surface",
-    "designed for iPad pro",
-    "wireless",
+    ["8,000 DPI", "5 Programmable buttons"],
+    ["intuitive surface", "designed for iPad pro"],
+    ["designed for iPad pro", "intuitive surface"],
+    ["wireless"],
   ];
   return (
     <div className="Product">
