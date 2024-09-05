@@ -1,10 +1,6 @@
 import { useState } from "react";
 
 export default function LikeButton() {
-  //   function clicked() {
-  //     console.log("clicked");
-  //   }
-
   let [isLiked, setIsliked] = useState(false);
   let toggleLike = () => {
     setIsliked(!isLiked);
