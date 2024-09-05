@@ -8,6 +8,7 @@ function App() {
     <>
       <Button></Button>
       <Form></Form>
+      <ProductTab></ProductTab>
     </>
   );
 }
