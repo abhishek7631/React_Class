@@ -1,0 +1,21 @@
+#internship {
+  text-align: center;
+  background-color: pink;
+  width: 700px;
+  margin: auto;
+  margin-top: 2rem;
+  border-radius: 5px;
+}
+
+#intern {
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+#intern h2 {
+  color: red;
+}
+
+#intern ul li {
+  padding: 5px;
+}

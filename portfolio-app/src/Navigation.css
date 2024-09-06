@@ -24,11 +24,15 @@ nav ul {
 
 nav ul li {
   list-style: none;
+}
+
+.nav-link {
+  text-decoration: none;
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
 }
 
-nav ul li:hover {
+.nav-link:hover {
   border-bottom: 2px solid white;
 }
