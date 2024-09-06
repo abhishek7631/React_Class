@@ -1,6 +1,6 @@
 import img from "./image.jpeg";
 
-export default function () {
+export default function Home() {
   return (
     <div
       style={{
