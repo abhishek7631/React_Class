@@ -36,3 +36,14 @@ nav ul li {
 .nav-link:hover {
   border-bottom: 2px solid white;
 }
+
+@media screen and (max-width: 775px) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav .menu {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
