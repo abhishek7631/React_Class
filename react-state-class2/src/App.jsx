@@ -5,7 +5,8 @@ import TodoList from "./TodoList";
 function App() {
   return (
     <>
-      <LudoBoard></LudoBoard>
+      {/* <LudoBoard></LudoBoard> */}
+      <TodoList></TodoList>
     </>
   );
 }
