@@ -3,14 +3,21 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Carousel from "react-bootstrap/Carousel";
+import ExampleCarouselImage from "./components/ExampleCarouselImage";
 
 export default function App() {
-  return <BasicExample></BasicExample>;
+  return (
+    <>
+      <BasicExample></BasicExample>
+      <IndividualIntervalsExample></IndividualIntervalsExample>
+    </>
+  );
 }
 
 function BasicExample() {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-info mt-4 w-75 m-auto">
       <Container>
         <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -33,6 +40,36 @@ function BasicExample() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+  );
+}
+
+function IndividualIntervalsExample() {
+  return (
+    <Carousel>
+      <Carousel.Item interval={1000}>
+        <ExampleCarouselImage text="First slide" />
+        <Carousel.Caption>
+          <h3>First slide label</h3>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item interval={500}>
+        <ExampleCarouselImage text="Second slide" />
+        <Carousel.Caption>
+          <h3>Second slide label</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <ExampleCarouselImage text="Third slide" />
+        <Carousel.Caption>
+          <h3>Third slide label</h3>
+          <p>
+            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          </p>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
   );
 }
 
@@ -67,8 +104,6 @@ function BasicExample() {
 //   );
 // }
 
-// export default App;
-
 // function On() {
 //   return (
 //     <div>
@@ -83,6 +118,8 @@ function BasicExample() {
 //     </div>
 //   );
 // }
+
+// export default App;
 
 // function App() {
 //   const [show, setShow] = useState(false);
