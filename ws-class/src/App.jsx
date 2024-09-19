@@ -11,17 +11,17 @@ function App() {
       <h2>LIGHT ON/OFF</h2>
       <button
         onClick={() => {
-          setShow(true);
-        }}
-      >
-        ON LIGHT
-      </button>
-      <button
-        onClick={() => {
           setShow(false);
         }}
       >
-        OFF LIGHT
+        Light On
+      </button>
+      <button
+        onClick={() => {
+          setShow(true);
+        }}
+      >
+        Light Off
       </button>
 
       {show ? <On /> : <Off />}
@@ -34,14 +34,14 @@ export default App;
 function On() {
   return (
     <div>
-      <img src={img1} alt="on" />
+      <img src={img1} alt="on" className="img1" />
     </div>
   );
 }
 function Off() {
   return (
     <div>
-      <img src={img2} alt="off" />
+      <img src={img2} alt="off" className="img2" />
     </div>
   );
 }

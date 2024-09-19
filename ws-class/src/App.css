@@ -1,9 +1,39 @@
-.main {
+.App {
+  height: 300px;
+  width: 300px;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.img1 {
+  height: 200px;
+  width: 200px;
+}
+
+.img2 {
+  height: 200px;
+  width: 200px;
+}
+
+h2 {
+  text-align: center;
+}
+
+button {
+  margin-left: 10px;
+}
+
+.img1,
+.img2 {
+  margin-left: 40px;
+}
+
+/* .main {
   margin: 50px auto;
   width: 250px;
   border: 2px solid black;
   padding: 15px;
-}
+} */
 
 /* #root {
   max-width: 1280px;
