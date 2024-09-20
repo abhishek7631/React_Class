@@ -1,18 +1,29 @@
 import "./App.css";
+import employe from "./Data";
 
 function App() {
-  let employe1 = [{ name: "Abhishek", position: "web developer", age: "23" }];
-  let employe2 = [{ name: "Ayush", position: "frontend developer", age: "22" }];
-  let employe3 = [{ name: "Pranav", position: "MERN developer", age: "22" }];
-  let employe4 = [{ name: "Sanket", position: "java developer", age: "21" }];
-  let employe5 = [{ name: "Shrinivas", position: "Aws developer", age: "24" }];
+  return (
+    <div>
+      <h1>Our Best Employes 2024</h1>
+      <section>
+        <Card
+          name={employe[0].name}
+          image={employe[0].img}
+          position={employe[0].position}
+        ></Card>
+      </section>
+    </div>
+  );
+}
 
-  console.log(employe1);
-  console.log(employe2);
-  console.log(employe3);
-  console.log(employe4);
-  console.log(employe5);
-  return <div></div>;
+function Card({ name, image, position }) {
+  return (
+    <div>
+      <img src={image} alt="image" />
+      <h2>{name}</h2>
+      <h3>{position}</h3>
+    </div>
+  );
 }
 
 export default App;

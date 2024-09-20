@@ -1,3 +1,19 @@
+h1 {
+  background-color: pink;
+  height: 50px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+section {
+  background-color: rgb(200, 200, 52);
+  height: 600px;
+  width: 100%;
+}
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
