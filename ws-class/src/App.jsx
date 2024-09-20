@@ -4,7 +4,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Carousel from "react-bootstrap/Carousel";
-import ExampleCarouselImage from "./components/ExampleCarouselImage";
+import "./App.css";
+// import ExampleCarouselImage from "./components/ExampleCarouselImage";
 
 export default function App() {
   return (
@@ -47,21 +48,33 @@ function IndividualIntervalsExample() {
   return (
     <Carousel>
       <Carousel.Item interval={1000}>
-        <ExampleCarouselImage text="First slide" />
+        <img
+          className="caroImg"
+          src="https://img.freepik.com/free-photo/close-up-kitten-by-window_23-2150782379.jpg?size=626&ext=jpg&ga=GA1.1.2008272138.1726804800&semt=ais_hybrid"
+          alt=""
+        />
         <Carousel.Caption>
           <h3>First slide label</h3>
           <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={500}>
-        <ExampleCarouselImage text="Second slide" />
+        <img
+          className="caroImg"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYWJtRwuXyB6FDNp6JrYKSy-GwkEsHax6qdA&s"
+          alt=""
+        />
         <Carousel.Caption>
           <h3>Second slide label</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
+        <img
+          className="caroImg"
+          src="https://cdn.pixabay.com/photo/2024/02/28/07/42/european-shorthair-8601492_640.jpg"
+          alt=""
+        />
         <Carousel.Caption>
           <h3>Third slide label</h3>
           <p>
