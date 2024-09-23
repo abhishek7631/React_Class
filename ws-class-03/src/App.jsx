@@ -35,6 +35,8 @@ function App() {
               margin: "20px 0",
               padding: "10px",
               border: "1px solid #ccc",
+              backgroundColor: "blue",
+              boxShadow: "2px 6px 3px red",
             }}
           >
             <h2>{post.title}</h2>
