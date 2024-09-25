@@ -8,7 +8,7 @@ function App() {
     <>
       {/* <LudoBoard></LudoBoard> */}
       {/* <TodoList></TodoList> */}
-      <Lottery></Lottery>
+      <Lottery n={4} winningSum={25}></Lottery>
     </>
   );
 }
