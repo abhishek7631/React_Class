@@ -5,10 +5,6 @@ import Tours from "./Tours";
 function App() {
   const [state, setstate] = useState(data);
 
-  if (state.length === 0) {
-    return <h1>Loading...</h1>;
-  }
-
   const remove = (id) => {
     const filtered = state.filter((items) => items.id !== id);
     setstate(filtered);
