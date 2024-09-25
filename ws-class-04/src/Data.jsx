@@ -33,7 +33,8 @@ const data = [
   {
     id: 5,
     name: "Darjeeling",
-    info: "Starting in the colorful port city of GdaÅ„sk, you'll escape the crowds and embrace the understated elegance of ready-for-prime-time Poland for 10 days. With an expert Rick Steves guide at your side, you'll experience mighty Malbork castle, the cobbly-cute village of ToruÅ„, Poland's contemporary capital of Warsaw, the spiritual Jasna GÃ³ra Monastery, and charming KrakÃ³w â€” Poland's finest city. In this land of surprises â€” so trendy and hip, yet steeped in history â€” there's so much to discover. Join us for the Best of Poland in 10 Days!",
+    info: "Starting in the colorful port city of GdaÅ„sk, you'll escape the crowds and embrace the understated elegance of ready-for-prime-time Poland for 10 days. With an expert Rick Steves guide at your side, you'll experience mighty Malbork castle, the cobbly-cute village of ToruÅ",
+
     image:
       "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Tea_Estate%2C_Darjeeling.jpg/1200px-Tea_Estate%2C_Darjeeling.jpg",
     price: "78,595",

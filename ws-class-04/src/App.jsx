@@ -9,9 +9,14 @@ function App() {
     return <h1>Loading...</h1>;
   }
 
+  const remove = (id) => {
+    const filtered = state.filter((items) => items.id !== id);
+    setstate(filtered);
+  };
+
   return (
     <div>
-      <Tours state={state}></Tours>
+      <Tours state={state} remove={remove}></Tours>
     </div>
   );
 }

@@ -1,12 +1,14 @@
 import Card from "./Card";
 
-const Tours = ({ state }) => {
+const Tours = ({ state, remove }) => {
   return (
-    <div>
+    <div style={{ marginTop: "20px" }}>
       <h1>Plan with Abhishek</h1>
-      {state.map((items) => {
-        return <Card key={items.id} {...items}></Card>;
-      })}
+      <div className="main">
+        {state.map((items) => {
+          return <Card key={items.id} {...items} remove={remove}></Card>;
+        })}
+      </div>
     </div>
   );
 };

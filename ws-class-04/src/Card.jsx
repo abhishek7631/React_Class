@@ -1,8 +1,20 @@
-const Card = ({ id, name, info, image, price }) => {
+const Card = ({ id, name, info, image, price, remove }) => {
   return (
-    <div>
-      <h1>this is card</h1>
-    </div>
+    <section className="card">
+      <img src={image} alt="images" />
+      <div>
+        <h4>{name}</h4>
+        <p>{price}</p>
+        <p>{info}</p>
+      </div>
+      <button
+        onClick={() => {
+          remove(id);
+        }}
+      >
+        Delete
+      </button>
+    </section>
   );
 };
 
