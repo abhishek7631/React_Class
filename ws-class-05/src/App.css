@@ -1,0 +1,16 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.hamburger-icon-left,
+.hamburger-icon-right {
+  cursor: pointer;
+}
+
+.video-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
