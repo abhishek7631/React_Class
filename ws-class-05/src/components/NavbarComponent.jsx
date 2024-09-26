@@ -3,10 +3,12 @@ import { Modal, Button } from "react-bootstrap";
 import { FaBars, FaMapMarkedAlt } from "react-icons/fa";
 import LoginSignupModal from "./LoginSignupModal";
 import MapModal from "./MapModal";
+import WizardModal from "./WizardModal";
 
 const NavbarComponent = () => {
   const [showLoginSignup, setShowLoginSignup] = useState(false);
   const [showMap, setShowMap] = useState(false);
+  const [showWizard, setShowWizard] = useState(false);
 
   return (
     <div className="navbar-container">
@@ -31,6 +33,9 @@ const NavbarComponent = () => {
 
       {/* Map Modal */}
       <MapModal show={showMap} onHide={() => setShowMap(false)} />
+
+      {/* Wizard Modal */}
+      <WizardModal show={showWizard} onHide={() => setShowWizard(false)} />
     </div>
   );
 };
