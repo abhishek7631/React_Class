@@ -9,7 +9,7 @@ export default function Nav() {
         <li>About</li>
         <li>Project</li>
         <li>Services</li>
-        <li>Services</li>
+        <li>Conatct</li>
       </div>
     </nav>
   );
