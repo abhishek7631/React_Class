@@ -3,7 +3,7 @@ import "./Nav.css";
 export default function Nav() {
   return (
     <nav>
-      <h1>Navbar</h1>
+      <h1>Portfolio</h1>
       <div className="menu">
         <li>Home</li>
         <li>About</li>

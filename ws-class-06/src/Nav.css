@@ -8,11 +8,12 @@ nav h1 {
   margin-left: 20px;
   margin-top: 20px;
   color: white;
+  font-family: cursive;
 }
 
 .menu {
   display: flex;
-  width: 700px;
+  width: 550px;
   height: 30px;
   justify-content: space-between;
   list-style: none;
