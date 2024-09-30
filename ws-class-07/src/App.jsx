@@ -16,11 +16,14 @@ function App() {
   };
 
   return (
-    <div>
-      <h1 className="text-center my-4">Student Form</h1>
+    <div className="bg-info py-4">
+      <h1 className="text-center my-2">Student Form</h1>
       <hr />
-      <form onSubmit={data} className="d-flex flex-column w-50 mx-auto">
-        <label htmlFor="name">Your Name:</label>
+      <form
+        onSubmit={data}
+        className="d-flex flex-column w-50 mx-auto border border-3 py-4 px-5"
+      >
+        <label htmlFor="name">Your First Name:</label>
         <input
           className="mb-2"
           type="text"
@@ -85,7 +88,11 @@ function App() {
           }}
         />
 
-        <input type="submit" value={"submit"} />
+        <input
+          className="mx-auto w-50 rounded-3 border-0"
+          type="submit"
+          value={"submit"}
+        />
       </form>
     </div>
   );
