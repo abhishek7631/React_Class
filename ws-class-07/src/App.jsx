@@ -1,35 +1,94 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [name, setName] = useState("");
+  const [middlename, setMiddlename] = useState("");
+  const [lastname, setLastname] = useState("");
+  const [age, setAge] = useState("");
+  const [email, setEmail] = useState("");
+  const [adharnum, setAdharnum] = useState("");
+
+  const data = (e) => {
+    e.preventDefault();
+    console.log(
+      `Name: ${name}, mName: ${middlename}, lName: ${lastname}, Age: ${age}, Email: ${email}, aNumber: ${adharnum}`
+    );
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div>
+      <h1 className="text-center my-4">Student Form</h1>
+      <hr />
+      <form onSubmit={data} className="d-flex flex-column w-50 mx-auto">
+        <label htmlFor="name">Your Name:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="name"
+          placeholder="Enter Your Name"
+          onChange={(e) => {
+            setName(e.target.value);
+          }}
+        />
+
+        <label htmlFor="mName">Your Middle Name:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="mName"
+          placeholder="Enter Your Middle Name"
+          onChange={(e) => {
+            setMiddlename(e.target.value);
+          }}
+        />
+
+        <label htmlFor="lName">Your Last Name:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="lName"
+          placeholder="Enter Your Last Name"
+          onChange={(e) => {
+            setLastname(e.target.value);
+          }}
+        />
+
+        <label htmlFor="age">Your Age:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="age"
+          placeholder="Enter Your age"
+          onChange={(e) => {
+            setAge(e.target.value);
+          }}
+        />
+        <label htmlFor="email">Your Email:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="email"
+          placeholder="Enter Your Email"
+          onChange={(e) => {
+            setEmail(e.target.value);
+          }}
+        />
+
+        <label htmlFor="Anumber">Your Adhar Number:</label>
+        <input
+          className="mb-2"
+          type="text"
+          id="Anumber"
+          placeholder="Enter Your Adhar Number"
+          onChange={(e) => {
+            setAdharnum(e.target.value);
+          }}
+        />
+
+        <input type="submit" value={"submit"} />
+      </form>
+    </div>
+  );
 }
 
-export default App
+export default App;
