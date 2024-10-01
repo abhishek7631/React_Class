@@ -36,7 +36,8 @@ export default function StudentForm({ addNewData }) {
     >
       <label htmlFor="fName">Your First Name:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="fName"
         placeholder="Enter Your Name"
@@ -47,7 +48,8 @@ export default function StudentForm({ addNewData }) {
 
       <label htmlFor="mName">Your Middle Name:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="mName"
         placeholder="Enter Your Middle Name"
@@ -58,7 +60,8 @@ export default function StudentForm({ addNewData }) {
 
       <label htmlFor="lName">Your Last Name:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="lName"
         placeholder="Enter Your Last Name"
@@ -69,7 +72,8 @@ export default function StudentForm({ addNewData }) {
 
       <label htmlFor="age">Your Age:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="age"
         placeholder="Enter Your age"
@@ -80,7 +84,8 @@ export default function StudentForm({ addNewData }) {
 
       <label htmlFor="email">Your Email:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="email"
         placeholder="Enter Your Email"
@@ -91,7 +96,8 @@ export default function StudentForm({ addNewData }) {
 
       <label htmlFor="Anumber">Your Adhar Number:</label>
       <input
-        className="mb-2"
+        className="mb-2 ps-4 rounded-pill border border-0 py-2"
+        required
         type="text"
         id="Anumber"
         placeholder="Enter Your Adhar Number"
@@ -101,7 +107,7 @@ export default function StudentForm({ addNewData }) {
       />
 
       <input
-        className="mx-auto w-50 rounded-3 border-0"
+        className="mx-auto w-50 rounded-3 border-0 py-2"
         type="submit"
         value="Submit"
       />
