@@ -3,16 +3,7 @@ import StudentData from "./StudentData";
 import StudentForm from "./StudentForm";
 
 function App() {
-  const [studentData, setStudentData] = useState([
-    {
-      firstname: "Abhishek",
-      middlename: "Kumar",
-      lastname: "Choudhary",
-      age: "24",
-      email: "abhishek@gmail.com",
-      adharnum: "1234567890",
-    },
-  ]);
+  const [studentData, setStudentData] = useState([]);
 
   const addNewData = (data) => {
     setStudentData((currData) => [...currData, data]);
