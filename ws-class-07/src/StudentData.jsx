@@ -1,21 +1,4 @@
-import { useState } from "react";
-
-export default function StudentData() {
-  const [studentData, setStudentData] = useState([
-    {
-      firstname: "Abhishek",
-      middlename: "Kumar",
-      lastname: "Choudhary",
-      age: "24",
-      email: "abhishek@gmail.com",
-      adharnum: "1234567890",
-    },
-  ]);
-
-  let addNewData = (data) => {
-    setStudentData((currData) => [...currData, data]);
-  };
-
+export default function StudentData({ studentData }) {
   return (
     <div className="d-flex flex-column w-75 mx-auto border border-3 py-4 px-5 my-5">
       <h1 className="text-danger">All Student Data</h1>
@@ -23,7 +6,7 @@ export default function StudentData() {
       {studentData.map((data, idx) => (
         <div className="data" key={idx}>
           <p>
-            Fisrt Name: <b>{data.firstname}</b>
+            First Name: <b>{data.firstname}</b>
           </p>
           <p>
             Middle Name: <b>{data.middlename}</b>
@@ -42,7 +25,6 @@ export default function StudentData() {
           </p>
         </div>
       ))}
-      <App addNewData={addNewData}></App>
     </div>
   );
 }
