@@ -4,13 +4,18 @@ import axios from "axios";
 export default function Read() {
   const [state, setState] = useState([]);
 
-  useEffect(() => {
-    const getData = async () => {
+  const getData = async () => {
+    try {
       const res = await axios.get(
         "https://66fb96308583ac93b40c4e65.mockapi.io/api/menu"
       );
       setState(res.data);
-    };
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
     getData();
   }, []);
 
@@ -20,7 +25,7 @@ export default function Read() {
         return (
           <div key={items.id}>
             <h1>{items.name}</h1>
-            <h4>{items.name}</h4>
+            <h4>{items.drinks}</h4>
           </div>
         );
       })}
