@@ -1,4 +1,5 @@
 import { useState } from "react";
+import StudentData from "./StudentData";
 
 function App() {
   const [formData, setFormData] = useState({
@@ -11,12 +12,8 @@ function App() {
   });
 
   const handleInputChange = (event) => {
-    let fieldName = event.target.name;
-    let newValue = event.target.value;
-
     setFormData((currData) => {
-      currData[fieldName] = newValue;
-      return { ...currData };
+      return { ...currData, [event.target.name]: event.target.value };
     });
   };
 
@@ -126,6 +123,7 @@ function App() {
           value={"submit"}
         />
       </form>
+      <StudentData></StudentData>
     </div>
   );
 }
