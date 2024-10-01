@@ -1,7 +1,7 @@
 import { useState } from "react";
 import StudentData from "./StudentData";
 
-function App() {
+function App({ addNewData }) {
   const [formData, setFormData] = useState({
     firstname: "",
     middlename: "",
@@ -20,6 +20,7 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formData);
+    addNewData(formData);
     setFormData({
       firstname: "",
       middlename: "",
