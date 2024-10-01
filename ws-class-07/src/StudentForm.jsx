@@ -74,7 +74,7 @@ export default function StudentForm({ addNewData }) {
       <input
         className="mb-2 ps-4 rounded-pill border border-0 py-2"
         required
-        type="text"
+        type="number"
         id="age"
         placeholder="Enter Your age"
         value={formData.age}
@@ -86,7 +86,7 @@ export default function StudentForm({ addNewData }) {
       <input
         className="mb-2 ps-4 rounded-pill border border-0 py-2"
         required
-        type="text"
+        type="email"
         id="email"
         placeholder="Enter Your Email"
         value={formData.email}
@@ -98,7 +98,7 @@ export default function StudentForm({ addNewData }) {
       <input
         className="mb-2 ps-4 rounded-pill border border-0 py-2"
         required
-        type="text"
+        type="number"
         id="Anumber"
         placeholder="Enter Your Adhar Number"
         value={formData.adharnum}
@@ -107,7 +107,7 @@ export default function StudentForm({ addNewData }) {
       />
 
       <input
-        className="mx-auto w-50 rounded-3 border-0 py-2"
+        className="mx-auto w-50 rounded-3 border-0 py-2 mt-2"
         type="submit"
         value="Submit"
       />

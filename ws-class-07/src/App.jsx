@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="bg-info py-4">
-      <h1 className="text-center my-2">Student Form</h1>
+      <h1 className="text-center">Student Registration Form</h1>
       <hr />
       <StudentForm addNewData={addNewData} />
       <StudentData studentData={studentData} />
