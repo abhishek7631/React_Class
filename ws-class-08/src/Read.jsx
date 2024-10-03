@@ -19,6 +19,14 @@ export default function Read() {
     getData();
   }, []);
 
+  const remove = async (id) => {
+    await axios
+      .delete(`https://66fb96308583ac93b40c4e65.mockapi.io/api/menu/${id}`)
+      .then(() => {
+        getData();
+      });
+  };
+
   return (
     <div>
       <h1
@@ -46,7 +54,15 @@ export default function Read() {
             }}
           >
             <h1 style={{ textAlign: "center" }}>Fruits: {items.name}</h1>
-            <h3 style={{ textAlign: "center" }}>Drinks: {items.drinks}</h3>
+            <h2 style={{ textAlign: "center" }}>Drinks: {items.drinks}</h2>
+            <button>Edit</button>
+            <button
+              onClick={() => {
+                remove(items.id);
+              }}
+            >
+              Delete
+            </button>
           </div>
         );
       })}
