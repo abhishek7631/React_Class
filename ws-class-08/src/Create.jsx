@@ -11,12 +11,21 @@ export default function Create() {
       name: name,
       drinks: drinks,
     });
-    console.log(name, drinks);
+    setName("");
+    setDrinks("");
   };
 
   return (
-    <div>
+    <div
+      style={{
+        border: "2px solid black",
+        width: "400px",
+        margin: "100px auto",
+        padding: "10px",
+      }}
+    >
       <form onSubmit={sendData}>
+        <label htmlFor="">Enter Name: </label>
         <input
           type="text"
           placeholder="name"
@@ -24,6 +33,8 @@ export default function Create() {
             setName(e.target.value);
           }}
         />
+        <br></br> <br></br>
+        <label htmlFor="">Enter Drinks: </label>
         <input
           type="text"
           placeholder="drink"
@@ -31,8 +42,8 @@ export default function Create() {
             setDrinks(e.target.value);
           }}
         />
-
-        <input type="submit" value={"Add"} />
+        <br></br> <br></br>
+        <input style={{ marginLeft: "100px" }} type="submit" value={"Add"} />
       </form>
     </div>
   );
