@@ -5,6 +5,8 @@ function App() {
   return (
     <>
       <Create></Create>
+      <br></br>
+      <hr></hr>
       <Read></Read>
     </>
   );

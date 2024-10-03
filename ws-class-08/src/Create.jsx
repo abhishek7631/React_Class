@@ -20,7 +20,8 @@ export default function Create() {
       style={{
         border: "2px solid black",
         width: "400px",
-        margin: "100px auto",
+        margin: "auto",
+        marginTop: "70px",
         padding: "10px",
       }}
     >

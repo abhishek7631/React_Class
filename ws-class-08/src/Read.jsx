@@ -21,11 +21,32 @@ export default function Read() {
 
   return (
     <div>
+      <h1
+        style={{
+          textAlign: "center",
+          border: "2px solid red",
+          backgroundColor: "black",
+          color: "white",
+        }}
+      >
+        -: Menu :-
+      </h1>
       {state.map((items) => {
         return (
-          <div key={items.id}>
-            <h1>{items.name}</h1>
-            <h4>{items.drinks}</h4>
+          <div
+            key={items.id}
+            style={{
+              width: "600px",
+              borderRadius: "10px",
+              margin: "auto",
+              backgroundColor: "green",
+              color: "yellow",
+              marginBottom: "10px",
+              padding: "5px",
+            }}
+          >
+            <h1 style={{ textAlign: "center" }}>Fruits: {items.name}</h1>
+            <h3 style={{ textAlign: "center" }}>Drinks: {items.drinks}</h3>
           </div>
         );
       })}
