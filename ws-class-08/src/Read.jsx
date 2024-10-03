@@ -9,22 +9,25 @@ export default function Read() {
       const res = await axios.get(
         "https://66fb96308583ac93b40c4e65.mockapi.io/api/menu"
       );
-      setState(res.data);
+      setState(res.data); // Update the state with the fetched data
     } catch (err) {
-      console.log(err);
+      console.error(err);
     }
   };
 
   useEffect(() => {
-    getData();
+    getData(); // Fetch data when the component mounts
   }, []);
 
   const remove = async (id) => {
-    await axios
-      .delete(`https://66fb96308583ac93b40c4e65.mockapi.io/api/menu/${id}`)
-      .then(() => {
-        getData();
-      });
+    try {
+      await axios.delete(
+        `https://66fb96308583ac93b40c4e65.mockapi.io/api/menu/${id}`
+      );
+      getData(); // Refresh the data after deletion
+    } catch (err) {
+      console.error("Error deleting item:", err);
+    }
   };
 
   return (
@@ -39,33 +42,29 @@ export default function Read() {
       >
         -: Menu :-
       </h1>
-      {state.map((items) => {
-        return (
-          <div
-            key={items.id}
-            style={{
-              width: "600px",
-              borderRadius: "10px",
-              margin: "auto",
-              backgroundColor: "green",
-              color: "yellow",
-              marginBottom: "10px",
-              padding: "5px",
-            }}
+      {state.map((items) => (
+        <div
+          key={items.id}
+          style={{
+            width: "600px",
+            borderRadius: "10px",
+            margin: "auto",
+            backgroundColor: "green",
+            color: "yellow",
+            marginBottom: "10px",
+            padding: "5px",
+          }}
+        >
+          <h1 style={{ textAlign: "center" }}>Fruits: {items.name}</h1>
+          <h2 style={{ textAlign: "center" }}>Drinks: {items.drinks}</h2>
+          <button>Edit</button>
+          <button
+            onClick={() => remove(items.id)} // Call remove with the correct ID
           >
-            <h1 style={{ textAlign: "center" }}>Fruits: {items.name}</h1>
-            <h2 style={{ textAlign: "center" }}>Drinks: {items.drinks}</h2>
-            <button>Edit</button>
-            <button
-              onClick={() => {
-                remove(items.id);
-              }}
-            >
-              Delete
-            </button>
-          </div>
-        );
-      })}
+            Delete
+          </button>
+        </div>
+      ))}
     </div>
   );
 }

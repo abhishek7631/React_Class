@@ -5,14 +5,27 @@ export default function Create() {
   const [name, setName] = useState("");
   const [drinks, setDrinks] = useState("");
 
-  const sendData = (e) => {
+  const sendData = async (e) => {
     e.preventDefault();
-    axios.post("https://66fb96308583ac93b40c4e65.mockapi.io/api/menu", {
-      name: name,
-      drinks: drinks,
-    });
-    setName("");
-    setDrinks("");
+
+    if (name && drinks) {
+      try {
+        await axios.post(
+          "https://66fb96308583ac93b40c4e65.mockapi.io/api/menu",
+          {
+            name: name,
+            drinks: drinks,
+          }
+        );
+        alert("Item added successfully!");
+        setName(""); // Reset the form fields after successful submission
+        setDrinks("");
+      } catch (error) {
+        console.error("Error adding item:", error);
+      }
+    } else {
+      alert("Please fill in both fields");
+    }
   };
 
   return (
@@ -26,25 +39,25 @@ export default function Create() {
       }}
     >
       <form onSubmit={sendData}>
-        <label htmlFor="">Enter Name: </label>
+        <label htmlFor="name">Enter Name: </label>
         <input
           type="text"
+          id="name"
           placeholder="name"
-          onChange={(e) => {
-            setName(e.target.value);
-          }}
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-        <br></br> <br></br>
-        <label htmlFor="">Enter Drinks: </label>
+        <br /> <br />
+        <label htmlFor="drinks">Enter Drinks: </label>
         <input
           type="text"
-          placeholder="drink"
-          onChange={(e) => {
-            setDrinks(e.target.value);
-          }}
+          id="drinks"
+          placeholder="drinks"
+          value={drinks}
+          onChange={(e) => setDrinks(e.target.value)}
         />
-        <br></br> <br></br>
-        <input style={{ marginLeft: "100px" }} type="submit" value={"Add"} />
+        <br /> <br />
+        <input style={{ marginLeft: "100px" }} type="submit" value="Add" />
       </form>
     </div>
   );
