@@ -16,14 +16,13 @@ function App() {
     <BrowserRouter>
       <div>
         <nav className="nav">
-          <h1>MyBlog</h1>
+          <h1 className="logo">MyBlog</h1>
           <div className={`menu ${menuOpen ? "active" : ""}`}>
-            <Link to="/" style={{ textDecoration: "none" }}>
-              <li>Home</li>
+            <Link to="/" className="nav-link">
+              Home
             </Link>
-
-            <Link to="/create" style={{ textDecoration: "none" }}>
-              <li>Create Blog</li>
+            <Link to="/create" className="nav-link">
+              Create Blog
             </Link>
           </div>
           <div className="hamburger" onClick={toggleMenu}>
