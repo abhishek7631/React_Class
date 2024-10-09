@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import "./BlogForm.css"; // CSS file for form styling
 
 const BlogForm = () => {
   const [title, setTitle] = useState("");
@@ -22,28 +23,49 @@ const BlogForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
-      <textarea
-        placeholder="Content"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-        required
-      />
-      <input
-        type="text"
-        placeholder="Image URL"
-        value={image}
-        onChange={(e) => setImage(e.target.value)}
-      />
-      <button type="submit">Create Blog</button>
-    </form>
+    <div className="blog-form-container">
+      <h2>Create a New Blog</h2>
+      <form onSubmit={handleSubmit} className="blog-form">
+        <div className="form-group">
+          <label htmlFor="title">Title</label>
+          <input
+            type="text"
+            id="title"
+            placeholder="Enter blog title"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="content">Content</label>
+          <textarea
+            id="content"
+            placeholder="Write your content here"
+            value={content}
+            onChange={(e) => setContent(e.target.value)}
+            rows="5"
+            required
+          ></textarea>
+        </div>
+
+        <div className="form-group">
+          <label htmlFor="image">Image URL</label>
+          <input
+            type="text"
+            id="image"
+            placeholder="Paste image URL"
+            value={image}
+            onChange={(e) => setImage(e.target.value)}
+          />
+        </div>
+
+        <button type="submit" className="submit-btn">
+          Create Blog
+        </button>
+      </form>
+    </div>
   );
 };
 
