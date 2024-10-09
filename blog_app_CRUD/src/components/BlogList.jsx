@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { MdDelete, MdThumbUp, MdEdit } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
+import "./BlogList.css"; // Add a CSS file for better styling
 
 const BlogList = () => {
   const [blogs, setBlogs] = useState([]);
@@ -48,80 +49,62 @@ const BlogList = () => {
   };
 
   return (
-    <div>
+    <div className="blog-list-container">
       {blogs.map((blog) => (
-        <div
-          key={blog.id}
-          style={{
-            border: "1px solid #ddd",
-            padding: "10px",
-            marginBottom: "10px",
-          }}
-        >
-          <h3>{blog.title}</h3>
-          <p>{blog.content}</p>
-          {blog.image && (
-            <img
-              src={blog.image}
-              alt={blog.title}
-              style={{ maxWidth: "100%" }}
-            />
-          )}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              marginTop: "10px",
-            }}
-          >
+        <div className="blog-card" key={blog.id}>
+          <div className="blog-header">
+            <h3>{blog.title}</h3>
+          </div>
+          <div className="blog-content">
+            <p>{blog.content}</p>
+            {blog.image && (
+              <img src={blog.image} alt={blog.title} className="blog-image" />
+            )}
+          </div>
+          <div className="blog-actions">
             <span>{blog.likes} Likes</span>
-            <div>
+            <div className="action-icons">
               <MdThumbUp
                 onClick={() => handleLike(blog.id, blog.likes)}
-                style={{ cursor: "pointer" }}
+                className="icon like-icon"
+                title="Like"
               />
               <MdEdit
                 onClick={() => navigate(`/edit/${blog.id}`)}
-                style={{ cursor: "pointer", marginLeft: "10px" }}
+                className="icon edit-icon"
+                title="Edit"
               />
               <MdDelete
                 onClick={() => handleDelete(blog.id)}
-                style={{ cursor: "pointer", marginLeft: "10px" }}
+                className="icon delete-icon"
+                title="Delete"
               />
             </div>
           </div>
-          <div
-            style={{
-              marginTop: "20px",
-              backgroundColor: "pink",
-              height: "200px",
-            }}
-          >
+          <div className="blog-comments">
             <h4>Comments</h4>
-            <div
-              style={{
-                overflow: "auto",
-                margin: "auto",
-                backgroundColor: "white",
-                height: "100px",
-                width: "400px",
-                overflowY: "auto",
-              }}
-            >
+            <div className="comments-section">
               {blog.comments ? (
                 blog.comments.map((c, index) => <p key={index}>{c.text}</p>)
               ) : (
-                <h1>Add your comments</h1>
+                <p className="no-comments">No comments yet. Add one below!</p>
               )}
             </div>
-            <input
-              type="text"
-              placeholder="Add a comment"
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-              style={{ marginRight: "10px" }}
-            />
-            <button onClick={() => handleComment(blog.id)}>Comment</button>
+            <div className="add-comment">
+              <input
+                type="text"
+                placeholder="Add a comment"
+                value={comment}
+                onChange={(e) => setComment(e.target.value)}
+                className="comment-input"
+              />
+              <button
+                onClick={() => handleComment(blog.id)}
+                className="comment-btn"
+              >
+                Comment
+              </button>
+            </div>
           </div>
         </div>
       ))}
