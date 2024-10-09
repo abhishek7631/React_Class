@@ -6,7 +6,7 @@ const EditBlog = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const [image, setImage] = useState("");
-  const [error, setError] = useState(null); // State for error handling
+  const [error, setError] = useState(null);
   const navigate = useNavigate();
   const { id } = useParams();
 
@@ -20,7 +20,7 @@ const EditBlog = () => {
         setContent(response.data.content);
         setImage(response.data.image);
       } catch (err) {
-        setError("Failed to fetch blog data. Please try again later."); // Set error message
+        setError("Failed to fetch blog data. Please try again later.");
       }
     };
 
@@ -41,7 +41,7 @@ const EditBlog = () => {
       );
       navigate("/");
     } catch (err) {
-      setError("Failed to update the blog. Please try again."); // Set error message
+      setError("Failed to update the blog. Please try again.");
     }
   };
 
@@ -57,7 +57,6 @@ const EditBlog = () => {
     >
       <h2>Edit Blog</h2>
       {error && <p style={{ color: "red" }}>{error}</p>}{" "}
-      {/* Display error message */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
