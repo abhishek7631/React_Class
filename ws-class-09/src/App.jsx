@@ -14,6 +14,11 @@ function App() {
     getData();
   }, []);
 
+  const change = (currentPage) => {
+    console.log(currentPage);
+    setPage(currentPage);
+  };
+
   return (
     <div>
       {data.slice(0, 10).map((items) => {
@@ -32,8 +37,20 @@ function App() {
           justifyContent: "center",
         }}
       >
-        <button>Prev</button>
-        <button>Next</button>
+        <button
+          onClick={() => {
+            change(page - 1);
+          }}
+        >
+          Prev
+        </button>
+        <button
+          onClick={() => {
+            change(page + 1);
+          }}
+        >
+          Next
+        </button>
       </section>
     </div>
   );
