@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import "./app.css";
 
 function App() {
   const [data, setData] = useState([]);
@@ -16,43 +17,69 @@ function App() {
 
   const change = (currentPage) => {
     console.log(currentPage);
-    setPage(currentPage);
+    if (currentPage >= 1 && currentPage !== page && currentPage <= 10)
+      setPage(currentPage);
   };
 
   return (
-    <div>
-      {data.slice(0, 10).map((items) => {
-        const { title, id } = items;
-        return (
-          <h4 key={id}>
-            {id}.{title}
-          </h4>
-        );
-      })}
+    <>
+      <h1 style={{ textAlign: "center" }}>Pagination</h1>
 
-      <section
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-        }}
-      >
-        <button
-          onClick={() => {
-            change(page - 1);
+      <div className="main">
+        {data.slice(page * 10 - 10, page * 10).map((items) => {
+          const { title, id } = items;
+          return (
+            <h4 key={id}>
+              {id}.{title}
+            </h4>
+          );
+        })}
+
+        <section
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
           }}
         >
-          Prev
-        </button>
-        <button
-          onClick={() => {
-            change(page + 1);
-          }}
-        >
-          Next
-        </button>
-      </section>
-    </div>
+          <button
+            className="btns"
+            onClick={() => {
+              change(page - 1);
+            }}
+          >
+            Prev
+          </button>
+
+          {[...Array(data.length / 10)].map((_, i) => {
+            return (
+              <button
+                className="pageBtn"
+                style={{
+                  background: i + 1 === page ? "black" : "",
+                  color: i + 1 === page ? "white" : "",
+                }}
+                key={i}
+                onClick={() => {
+                  change(i + 1);
+                }}
+              >
+                {i + 1}
+              </button>
+            );
+          })}
+
+          <button
+            className="btns"
+            onClick={() => {
+              change(page + 1);
+            }}
+          >
+            Next
+          </button>
+        </section>
+      </div>
+    </>
   );
 }
 
